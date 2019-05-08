@@ -1,0 +1,244 @@
+@import 'normalize.css';
+
+$link-color:#ffcc00;
+$font-stack: Raleway, sans-serif;
+$font-roboto:'Roboto', sans-serif;
+
+.container{
+	max-width:1000px;
+	margin:0 auto;
+	height: 770px;
+}
+
+.header{
+	text-align:center;
+	padding-top:30px;
+		&__little-title{
+		color:#898f8f;
+		font-family:$font-stack;
+		text-transform: uppercase;
+		font-size: 18px;
+		letter-spacing: 0.36px;
+		line-height: 24px;
+		}
+			&__big-title{
+			color:$link-color;
+			font-family:$font-roboto;
+			font-size: 60px;
+			font-weight: 800;
+			line-height: 66px;
+			text-transform: uppercase;
+			padding-top:15px;
+			}
+				&__fire{
+				padding-top:54px;
+				overflow: hidden;
+				
+					&:before,
+					&:after{
+					display: inline-block;
+	    			vertical-align: middle;
+	    			width: 210px;
+	   				 height: 2px;
+	   				 background-color:$link-color;
+	   				 position: relative;
+					}
+					&:before{
+					content: '';
+				    margin-left: -100%;
+				    top: -6px;
+					}
+					&:after{
+					content: '';
+					margin-right: -100%;
+	    			top: -6px;
+					}
+				}
+
+}
+
+.main{
+width:100%;
+height: 70%;
+	&__photo{
+	width:45%;
+	float:left;
+	padding-top: 60px;
+	margin-right: 49px;
+	img{
+	width: 300px;
+    height: 310px;
+    border: 1px solid $link-color;
+	}
+	}
+	#main__line:after{
+	content: '';
+	  width: 0;
+	  height: 400px;
+      position: absolute;
+      border: 1px solid $link-color;
+	}
+	&__info{
+	width:45%;
+	float:right;
+	text-align:center;
+	padding-top: 60px;
+	}
+	&__name {
+	font-family:$font-roboto;
+	font-size: 37px;
+	color: #666666;
+ 	display: inline-block;
+    line-height: 50px;
+	}
+	&__name:after{
+	content:'';
+    width:45%;
+    border-bottom:1px solid $link-color;
+    display: inline-block;
+    margin: 24px auto;
+
+	}
+	
+	&__activity {
+	font-family:$font-stack;
+	color: #666666;
+	font-size: 18px;
+	display: block;
+	
+	}
+	&__icon{
+	padding-top:25px;
+	}
+
+	$link-icon_color:#cccccc;
+	@mixin code{
+	background-position: center center;
+	background-repeat: no-repeat;
+	width: 25px;
+    height: 25px;
+	border: 1px solid $link-icon_color;
+    border-radius: 50%;
+    background-position: center center;
+    display:inline-block;
+    text-align:center;
+	}
+
+	@mixin social{
+	box-shadow: 0 5px 11px 0 rgba(0,0,0,.18), 0 4px 15px 0 rgba(0,0,0,.30);
+	transition: .2s ease;
+	}
+	&__icon{
+	padding:27px 27px;
+	}
+	&__facebook{
+	    background-image: url(../images/facebook.png);
+	   @include code
+	}
+	&__facebook:hover{
+    @include social
+	}
+	&__twitter{
+	background-image: url(../images/twitter.png);
+	@include code
+	}
+	&__twitter:hover{
+    @include social
+	}
+	&__google{
+	background-image: url(../images/google.png);
+	@include code
+	}
+	&__google:hover{
+    @include social
+	}
+	&__linkedin{
+	background-image: url(../images/linkedin.png);
+	@include code
+	}
+	&__linkedin:hover{
+    @include social
+	}
+
+	&__text{
+	text-align:center;
+	font-size: 14px;
+	font-family:$font-stack;
+	line-height: 24px;	
+	}
+	&__line{
+  line-height: 2.5em;
+	}
+	&__line:after{
+	content:'';
+    width:8%;
+    border-bottom:4px dashed $link-color;
+    display: inline-block;
+    margin: 2px auto;
+	}
+	&__btn{
+	padding-top:15px;
+	}
+	&__btn--low{
+	width: 120px;
+	border: 1px solid $link-color;
+	padding: 6px 12px 6px 12px;
+	font-size: 14px;
+	font-weight: 700;
+	line-height: 24px;
+	text-transform: uppercase;
+	text-decoration:none;
+	color: #666666;
+	}
+	&__btn--low:hover{
+	color: $link-color;
+    box-shadow: 0 5px 11px 0 rgba(0,0,0,.18), 0 4px 15px 0 rgba(0,0,0,.15);
+    transition: .3s ease-out;
+    border: 2px solid $link-color;
+	}
+	&__radio{
+	text-align:center;
+	}
+
+
+}
+
+input[type='radio'] {
+  position: relative;
+  height: 20px;
+  width: 20px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+}
+
+input[type='radio']::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border: 2px solid #ffcc00;
+}
+
+input[type='radio']:checked::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #ffcc00	;
+  transform: translate(-50%, -50%);
+  visibility: visible;
+}
+
+
+
+
